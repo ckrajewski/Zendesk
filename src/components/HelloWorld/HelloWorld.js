@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
-import { fetchStuff } from "../../actions/action"
+import { bindActionCreators } from 'redux';
+import { fetchStuff } from "../../actions/action";
+import "./HelloWorld.css";
 class HelloWorld extends React.Component {
 
   render() {
   	return (
-    <div>
+    <div className="notAnUglyBackground">
     Hello World!
      </div> 
     );
