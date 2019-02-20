@@ -1,8 +1,9 @@
 /*
 alias npm-exec='PATH=$(npm bin):$PATH'
 */
-var webpack = require('webpack');
-var path = require('path');
+const  webpack = require('webpack');
+const  path = require('path');
+const openBrowser = require('react-dev-utils/openBrowser');
 
 module.exports = {
   context: path.join(__dirname, "src"),
@@ -41,3 +42,6 @@ module.exports = {
     filename: "mainCreated.js"
   },
 };
+if (openBrowser('http://localhost:8080')) {
+    console.log('The browser tab has been opened!');
+}
