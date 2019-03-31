@@ -1,35 +1,31 @@
-import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
-import { fetchStuff } from "../../actions/action";
+import React from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
-import styles from "./HelloWorld.css";
+import { fetchStuff } from '../../actions/action';
+import styles from './HelloWorld.css';
 
-let cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 class HelloWorld extends React.Component {
-
   render() {
-    let className = cx({
-      notAnUglyBackground:true,
+    const className = cx({
+      notAnUglyBackground: true,
     });
-  	return (
-    <div className={className}>
-    Hello World!
-     </div> 
+    return (
+      <div className={className}>
+        Hello World!
+      </div>
     );
   }
 }
 
-const mapToStateProps = (state) => {
-    return {
-      data: state.weather
-    };
-  };
+const mapToStateProps = state => ({
+  data: state.weather,
+});
 
 const mapDispatchToProps = dispatch => ({
-  fetchStuff: () => dispatch(fetchStuff())
+  fetchStuff: () => dispatch(fetchStuff()),
 });
 
 
-export default connect(mapToStateProps,mapDispatchToProps)(HelloWorld);
+export default connect(mapToStateProps, mapDispatchToProps)(HelloWorld);
