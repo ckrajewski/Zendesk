@@ -45,6 +45,7 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0",
+    "postcss-selector-namespace": "^2.0.0",
     "react": "^16.4.2",
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.4.2",
