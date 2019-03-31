@@ -1,5 +1,12 @@
 .notAnUglyBackground {
-	background-color:yellow;
-	border-radius: 15px;
-	padding: 2%;
+  background-color: yellow;
+  border-radius: 15px;
+  padding: 2%;
+}
+
+.beerGrid {
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+  padding-top: 3%;
 }

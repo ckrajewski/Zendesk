@@ -1,11 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import classNames from 'classnames/bind';
 import { fetchBeer } from '../../actions/action';
 import Beer from '../Beer/Beer';
 import styles from './HelloWorld.css';
-
-const cx = classNames.bind(styles);
 
 class HelloWorld extends React.Component {
   constructor() {
@@ -34,12 +31,9 @@ class HelloWorld extends React.Component {
   render() {
     const { beers } = this.state;
     const { beer } = this.props;
-    const className = cx({
-      notAnUglyBackground: false,
-    });
     const beerList = beer ? [...beer].concat([...beers]) : [];
     return (
-      <div className={className}>
+      <div className={styles.beerGrid}>
         {beerList.length > 0
           ? beerList.map(beer => <Beer img={beer.image_url} name={beer.name} />) : null}
       </div>
