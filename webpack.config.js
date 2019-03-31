@@ -25,14 +25,22 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader"
-            },
-            {
-                test: /\.sass$/,
                 use: [
-                    { loader: "sass-loader" },
-                    { loader: "css-loader" },
-                    { loader: "postcss" }
+                    'style-loader',
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoader: 1,
+                            modules: true,
+                            localIdentName: '[local]___[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss'
+                        }
+                    }
                 ]
             }
         ]
