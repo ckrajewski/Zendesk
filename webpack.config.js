@@ -25,14 +25,19 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader"
-            },
-            {
-                test: /\.sass$/,
                 use: [
-                    { loader: "sass-loader" },
-                    { loader: "css-loader" },
-                    { loader: "postcss" }
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('postcss-import')(),
+                                require('stylelint')()
+                            ]
+                        }
+                    }
                 ]
             }
         ]
