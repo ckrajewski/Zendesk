@@ -1,6 +1,7 @@
 module.exports = {
-  "plugins": {
-    "postcss-import" : {},
-    "stylelint" : {}
-  }
+  "plugins": [
+    require("postcss-import"),
+    require("autoprefixer"),
+    require("stylelint")
+  ]
 }
