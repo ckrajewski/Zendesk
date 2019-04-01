@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export function fetchBeer() {
+export function fetchStuff() {
   return function (dispatch) {
-    axios.get('https://api.punkapi.com/v2/beers/')
+    axios.get(URL)
       .then((response) => {
-        dispatch({ type: 'RECEIVED_BEER', payload: response.data });
+        dispatch({ type: 'RECEIVED_STUFF', payload: response.data });
       })
       .catch((err) => {
         dispatch({ type: 'RECEIVED_STUFF_ERROR', payload: err });

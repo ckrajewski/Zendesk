@@ -1,13 +1,15 @@
 export default function reducer(state = {
   fetching: false,
-  beer: null,
+  data: {},
 }, action) {
   switch (action.type) {
-    case 'RECEIVED_BEER': {
-      return { ...state, fetched: true, beer: action.payload };
+    case 'RECEIVED_STUFF':
+    {
+      return { ...state, fetched: true, data: action.payload };
     }
-    case 'RECEIVED_WEATHER_STUFF_ERROR': {
-      return { ...state, fetched: false, beer: action.payload };
+    case 'RECEIVED_WEATHER_STUFF_ERROR':
+    {
+      return { ...state, fetched: false, data: action.payload };
     }
   }
   return state;
