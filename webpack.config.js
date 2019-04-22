@@ -10,14 +10,17 @@ module.exports = {
     devtool: "#eval-sourcemap",
     entry: "./main.js",
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 use: [{
                         loader: "babel-loader",
                         options: {
                             presets: ["babel-preset-env", "react"],
-                            plugins: ["transform-object-rest-spread", "transform-class-properties", "babel-plugin-react-css-modules"],
+                            plugins: ["transform-object-rest-spread", "transform-class-properties", ["react-css-modules", {
+                               context: path.join(__dirname, "src")
+                            }]],
                         },
                     },
                     { loader: "eslint-loader" }
@@ -32,7 +35,7 @@ module.exports = {
                         options: {
                             importLoader: 1,
                             modules: true,
-                            localIdentName: '[local]___[hash:base64:5]'
+                            localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
                         }
                     },
                     {
