@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "formatJS": "./node_modules/.bin/eslint --fix src/**/*.js src/**/**/*.js",
-    "formatCSS": "./node_modules/.bin/stylelint --fix src/**/*.css",
+    "formatJS": "./node_modules/.bin/eslint --fix src/**/*.js src/**/**/*.js src/App.js",
+    "formatCSS": "./node_modules/.bin/stylelint --fix src/**/*.css src/App.css",
     "format": "npm-run-all --parallel formatJS formatCSS",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-client": "webpack-dev-server --config ./webpack.config.js --content-base src --inline --hot",
