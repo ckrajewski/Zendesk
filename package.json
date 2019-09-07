@@ -62,7 +62,6 @@
     "style-loader": "^0.23.0",
     "stylelint": "^9.10.1",
     "stylelint-cli": "^1.0.0",
-    "stylelint-config-airbnb": "0.0.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^2.1.0",
