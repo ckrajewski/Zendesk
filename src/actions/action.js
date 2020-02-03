@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-export function fetchStuff() {
+export function fetchDefaultSubscriptionData() {
   return function (dispatch) {
-    axios.get(URL)
+    axios.get('/api/current')
       .then((response) => {
-        dispatch({ type: 'RECEIVED_STUFF', payload: response.data });
+        debugger;
+        dispatch({ type: 'RECEIVED_DEFAULT_SUBSCRIPTION', payload: response.data });
       })
       .catch((err) => {
-        dispatch({ type: 'RECEIVED_STUFF_ERROR', payload: err });
+        dispatch({ type: 'RECEIVED_DEFAULT_SUBSCRIPTION_ERROR', payload: err });
       });
   };
 }
