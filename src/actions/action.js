@@ -42,6 +42,13 @@ export function previewSubscriptionData(previewData) {
 export function sendOldAndNewSubscriptionData(oldSubscriptionData, newSubscriptionData) {
   return function (dispatch) {
     debugger;
-    dispatch({ type: 'RECEIVED_SUBMITTED_SCREEN', payload: { oldSubscriptionData, newSubscriptionData } });
+    axios.put('/api/current', { newSubscriptionData })
+      .then((response) => {
+        debugger;
+        dispatch({ type: 'RECEIVED_SUBMITTED_SCREEN', payload: { oldSubscriptionData, newSubscriptionData } });
+      })
+      .catch((err) => {
+        dispatch({ type: 'RECEIVED_SUBMITTED_SCREEN_ERROR', payload: err });
+      });
   };
 }

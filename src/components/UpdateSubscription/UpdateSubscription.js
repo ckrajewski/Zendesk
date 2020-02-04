@@ -30,7 +30,7 @@ class UpdateSubscription extends React.Component {
     return (
       <div>
 
-        <Button disabled={buttonDisabled} component={Link} to={{ type: 'ROUTESCREEN', payload: { savedSubscription, previewSubscription } }} onClick={this.handleUpdateSubscription}>
+        <Button disabled={buttonDisabled} component={Link} to={{ type: 'SUBMITTEDSCREEN', payload: { savedSubscription, previewSubscription } }} onClick={this.handleUpdateSubscription}>
         Update Subscription
         </Button>
 

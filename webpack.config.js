@@ -31,8 +31,8 @@ module.exports = {
                 use: [{
                         loader: "babel-loader",
                         options: {
-                            presets: [["babel-preset-env", "react"],
-                            plugins: ["transform-object-rest-spread", "transform-class-properties", ["react-css-modules", {
+                            presets: ["babel-preset-env", "react"],
+                            plugins: ["transform-object-rest-spread", "transform-class-properties", ["transform-runtime", {"regenerator": true}], ["react-css-modules", {
                                context: path.join(__dirname, "src")
                             }]],
                         },

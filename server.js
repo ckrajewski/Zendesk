@@ -48,7 +48,9 @@ app.get('/api/current', (req, res) => {
 });
 
 app.put('/api/current', (req, res) => {
-    currentSubscription = res.data;
+	debugger;
+	currentSubscription = {...req.body.newSubscriptionData};
+    res.send(true);
 });
 
 const getPreviewData = (preview) => {
