@@ -14,7 +14,7 @@ let currentSubscription = {
 		"plan": "good",
   		"name": "Good",
   		"seats": 5,
-  		"cost":  50
+  		"price":  50
 }
 const PLAN_COSTS = {
   basic:  1,
@@ -56,11 +56,13 @@ const getPreviewData = (preview) => {
       plan:  preview.plan,
       name:  PLAN_NAMES[preview.plan],
       seats: preview.seats,
-      cost:  preview.seats * PLAN_COSTS[preview.plan]      
+      price:  preview.seats * PLAN_COSTS[preview.plan]      
     };
 
     return responseText;
 }
-app.post('/api/current', (req, res) => {
-	res.send(this.getPreviewData(req.data));
+app.post('/api/preview', (req, res) => {
+	debugger;
+	const previewData = req.body.previewData;
+	res.send(getPreviewData(previewData));
 });

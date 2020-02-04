@@ -3,12 +3,12 @@ export default function reducer(state = {
   subscriptionData: {},
 }, action) {
   switch (action.type) {
-    case 'RECEIVED_DEFAULT_SUBSCRIPTION':
+    case 'RECEIVED_PREVIEW_SUBSCRIPTION':
     {
       debugger;
       return { ...state, fetched: true, subscriptionData: action.payload };
     }
-    case 'RECEIVED_WEATHER_STUFF_ERROR':
+    case 'RECEIVED_PREVIEW_SUBSCRIPTION_ERROR':
     {
       return { ...state, fetched: false, data: action.payload };
     }

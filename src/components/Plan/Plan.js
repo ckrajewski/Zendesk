@@ -9,7 +9,7 @@ export default class Plan extends React.Component {
     super();
     debugger;
     this.state = {
-      selectedPlan: props.defaultPlan,
+      selectedPlan: props.plan,
     };
   }
 

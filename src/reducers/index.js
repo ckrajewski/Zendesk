@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import reducer from './someReducer';
+import subscriptionReducer from './subscriptionReducer';
+import previewReducer from './previewReducer';
 
 export default combineReducers({
-  data: reducer,
+  subscriptionReducer, previewReducer,
 });
