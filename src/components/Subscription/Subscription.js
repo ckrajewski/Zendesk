@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Plan from '../Plan/Plan';
 import UpdateSubscription from '../UpdateSubscription/UpdateSubscription';
 import { fetchDefaultSubscriptionData, previewSubscriptionData } from '../../actions/action'; import './Subscription.css';
+import { areSubscriptionsEqual, isEmptyObject } from '../../Utils';
 
 // const cx = classNames.bind(styles);
 
@@ -41,23 +42,28 @@ class Subscription extends React.Component {
     });
   }
 
-  isEmptyObject = obj => Object.entries(obj).length === 0 && obj.constructor === Object
-
   render() {
-    const { savedSubscription, previewSubscription } = this.props;
+    const { savedSubscription, previewSubscription, planNames } = this.props;
+    debugger;
     const {
       plan, seats, price, initialized,
     } = this.state;
-    if (!initialized && !this.isEmptyObject(savedSubscription)) {
-      this.setState({ ...savedSubscription, initialized: true });
+
+    if (!initialized && !isEmptyObject(savedSubscription)) {
+      if (!isEmptyObject(previewSubscription)) {
+        this.setState({ ...previewSubscription, initialized: true });
+      } else {
+        this.setState({ ...savedSubscription, initialized: true });
+      }
       return (<div />);
     }
     const displayPrice = previewSubscription.price || price;
+
     return (
       <div styleName="layout">
         <div>
           <div> Plan </div>
-          <Plan plan={plan} handleSelect={this.handlePlanSelect} />
+          <Plan plan={plan} planNames={planNames} handleSelect={this.handlePlanSelect} />
         </div>
         <div>
           <div> Seats </div>
@@ -79,8 +85,9 @@ class Subscription extends React.Component {
 }
 
 const mapToStateProps = state => ({
-  savedSubscription: state.default.subscriptionReducer.subscriptionData,
-  previewSubscription: state.default.previewReducer.subscriptionData,
+  savedSubscription: state.default.initialSubscriptionReducer.subscription,
+  planNames: state.default.initialSubscriptionReducer.planNames,
+  previewSubscription: state.default.previewReducer.subscription,
 });
 
 const mapDispatchToProps = dispatch => ({

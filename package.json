@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "formatJS": "./node_modules/.bin/eslint --fix src/**/*.js src/**/**/*.js src/actions/*.js src/App.js",
+    "formatJS": "./node_modules/.bin/eslint --fix src/**/*.js src/**/**/*.js src/actions/*.js src/App.js src/Utils.js",
     "formatCSS": "./node_modules/.bin/stylelint --fix src/**/*.css src/App.css",
     "format": "npm-run-all --parallel formatJS formatCSS",
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -1,4 +1,4 @@
-import { sendOldAndNewSubscriptionData } from './actions/action';
+import { updateSubscriptionData } from './actions/action';
 
 export default {
   SUBMITTEDSCREEN: {
@@ -13,15 +13,10 @@ export default {
     thunk: async (dispatch, getState) => {
       debugger;
       const { location } = getState();
-      const { savedSubscription, previewSubscription } = location.payload;
+      const { previewSubscription } = location.payload;
 
       // todo: add agency to path to support multiple agencies
-      dispatch(
-        sendOldAndNewSubscriptionData(
-          savedSubscription,
-          previewSubscription,
-        ),
-      );
+      dispatch(updateSubscriptionData(previewSubscription));
     },
   },
   SUBSCRIPTION: '/',

@@ -3,24 +3,19 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Link from 'redux-first-router-link';
 import SubscriptionInfo from '../SubscriptionInfo/SubscriptionInfo';
-import { sendOldAndNewSubscriptionData } from '../../actions/action';
 import './SubmittedScreen.css';
 
 class SubmittedScreen extends React.Component {
   render() {
-    const { updateSubscriptionData } = this.props;
-    if (!updateSubscriptionData) {
-      return (<div />);
-    }
-    const { newSubscriptionData, oldSubscriptionData } = updateSubscriptionData;
+    const { newSubscription, oldSubscription } = this.props;
     debugger;
     return (
       <div>
         <div styleName="columns">
-          <SubscriptionInfo {...oldSubscriptionData} />
-          <SubscriptionInfo {...newSubscriptionData} />
+          <SubscriptionInfo {...oldSubscription} />
+          <SubscriptionInfo {...newSubscription} />
         </div>
-        <Button component={Link} to="/" onClick={this.handleUpdateSubscription}>
+        <Button component={Link} to="/">
         Back
         </Button>
       </div>
@@ -31,13 +26,9 @@ class SubmittedScreen extends React.Component {
 const mapToStateProps = (state) => {
   debugger;
   return ({
-    updateSubscriptionData: state.default.subscriptionReducer.subscriptionSubmittedData,
+    oldSubscription: state.default.updateSubscriptionReducer.oldSubscription,
+    newSubscription: state.default.updateSubscriptionReducer.newSubscription,
   });
 };
 
-const mapDispatchToProps = dispatch => ({
-  sendOldAndNewSubscriptionData: () => dispatch(sendOldAndNewSubscriptionData()),
-
-});
-
-export default connect(mapToStateProps, mapDispatchToProps)(SubmittedScreen);
+export default connect(mapToStateProps, null)(SubmittedScreen);

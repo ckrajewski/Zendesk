@@ -30,6 +30,11 @@ const PLAN_NAMES = {
   best:   'Best'
 }
 
+//used for populating list in front end
+const planNamesArray = Object.keys(PLAN_NAMES).map(key => 
+	({value: key, label: PLAN_NAMES[key]}));
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -44,13 +49,14 @@ if (openBrowser('http://localhost:8080')) {
 
 app.get('/api/current', (req, res) => {
     debugger;
-    res.send(currentSubscription);
+    res.send({currentSubscription, planNames: planNamesArray});
 });
 
 app.put('/api/current', (req, res) => {
 	debugger;
+	const oldSubscription = {...currentSubscription};
 	currentSubscription = {...req.body.newSubscriptionData};
-    res.send(true);
+    res.send({oldSubscription, newSubscription: currentSubscription});
 });
 
 const getPreviewData = (preview) => {

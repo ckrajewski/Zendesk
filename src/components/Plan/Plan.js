@@ -9,7 +9,7 @@ export default class Plan extends React.Component {
     super();
     debugger;
     this.state = {
-      selectedPlan: props.plan,
+      selectedPlan: null,
     };
   }
 
@@ -18,17 +18,18 @@ export default class Plan extends React.Component {
     const { handleSelect } = this.props;
     const selectedPlan = event.target.value;
     this.setState({ selectedPlan });
-    handleSelect(event.target.value);
+    handleSelect(selectedPlan);
   }
 
   render() {
     const { selectedPlan } = this.state;
+    const { planNames, plan } = this.props;
     debugger;
     return (
       <div>
-        <Select labelId="label" id="select" value={selectedPlan} onChange={this.handlePlanSelect}>
-          <MenuItem value="good">Good</MenuItem>
-          <MenuItem value="better">Better</MenuItem>
+        <Select labelId="label" id="select" value={selectedPlan || plan} onChange={this.handlePlanSelect}>
+          {planNames ? planNames.map(plan => (
+            <MenuItem value={plan.value}>{plan.label}</MenuItem>)) : null }
         </Select>
       </div>
     );
