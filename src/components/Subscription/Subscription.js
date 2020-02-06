@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CurrencyFormat from 'react-currency-format';
+import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 import Plan from '../Plan/Plan';
 import UpdateSubscription from '../UpdateSubscription/UpdateSubscription';
-import { fetchDefaultSubscriptionData, previewSubscriptionData } from '../../actions/action'; import './Subscription.css';
+import { fetchDefaultSubscriptionData, previewSubscriptionData } from '../../actions/action';
 import { areSubscriptionsEqual, isEmptyObject } from '../../Utils';
-
+import './Subscription.css';
 // const cx = classNames.bind(styles);
 
 class Subscription extends React.Component {
@@ -15,7 +19,7 @@ class Subscription extends React.Component {
     this.state = {
       plan: null,
       seats: null,
-      price: null,
+      price: 0,
       initialized: false,
     };
   }
@@ -57,28 +61,52 @@ class Subscription extends React.Component {
       }
       return (<div />);
     }
-    const displayPrice = previewSubscription.price || price;
+    const displayPrice = (previewSubscription.price === 0 || previewSubscription.price)
+      ? previewSubscription.price : price;
 
     return (
-      <div styleName="layout">
-        <div>
-          <div> Plan </div>
-          <Plan plan={plan} planNames={planNames} handleSelect={this.handlePlanSelect} />
+      <div>
+        <div styleName="header">
+          <Typography variant="h6">
+          Subscription
+          </Typography>
         </div>
-        <div>
-          <div> Seats </div>
-          <input value={seats} onChange={this.handleSeatChange} />
-        </div>
-        <div>
-          <div> Price </div>
-          <div>
-            {displayPrice}
+        <div styleName="border-layout">
+          <div styleName="border">
+            <div styleName="layout">
+              <div>
+                <Plan plan={plan} planNames={planNames} handleSelect={this.handlePlanSelect} />
+              </div>
+              <div>
+                <InputLabel>
+                  Seats
+                </InputLabel>
+                <TextField
+                  id="standard-number"
+                  type="number"
+                  value={seats}
+                  onChange={this.handleSeatChange}
+                />
+              </div>
+              <div>
+                <InputLabel>
+                  Price
+                </InputLabel>
+                <div>
+                  <Typography variant="body1">
+                    <CurrencyFormat prefix="$" value={displayPrice} displayType="text" thousandSeparator />
+                  </Typography>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div styleName="alignRight">
+            <UpdateSubscription
+              savedSubscription={savedSubscription}
+              previewSubscription={previewSubscription}
+            />
           </div>
         </div>
-        <UpdateSubscription
-          savedSubscription={savedSubscription}
-          previewSubscription={previewSubscription}
-        />
       </div>
     );
   }

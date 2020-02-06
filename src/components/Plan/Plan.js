@@ -1,4 +1,5 @@
 import React from 'react';
+import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -27,6 +28,9 @@ export default class Plan extends React.Component {
     debugger;
     return (
       <div>
+        <InputLabel>
+          Plan
+        </InputLabel>
         <Select labelId="label" id="select" value={selectedPlan || plan} onChange={this.handlePlanSelect}>
           {planNames ? planNames.map(plan => (
             <MenuItem value={plan.value}>{plan.label}</MenuItem>)) : null }
