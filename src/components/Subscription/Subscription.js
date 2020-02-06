@@ -74,13 +74,15 @@ class Subscription extends React.Component {
         <div styleName="border-layout">
           <div styleName="border">
             <div styleName="layout">
-              <div>
+              <div styleName="center">
                 <Plan plan={plan} planNames={planNames} handleSelect={this.handlePlanSelect} />
               </div>
-              <div>
-                <InputLabel>
-                  Seats
-                </InputLabel>
+              <div styleName="center">
+                <div styleName="label">
+                  <InputLabel>
+                    Seats
+                  </InputLabel>
+                </div>
                 <TextField
                   id="standard-number"
                   type="number"
@@ -89,10 +91,12 @@ class Subscription extends React.Component {
                   inputProps={{ min: 1 }}
                 />
               </div>
-              <div>
-                <InputLabel>
-                  Price
-                </InputLabel>
+              <div styleName="center">
+                <div styleName="label">
+                  <InputLabel>
+                    Price
+                  </InputLabel>
+                </div>
                 <div>
                   <Typography variant="body1">
                     <CurrencyFormat prefix="$" value={displayPrice} displayType="text" thousandSeparator />

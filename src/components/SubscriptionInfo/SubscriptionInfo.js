@@ -14,10 +14,14 @@ const SubscriptionInfo = (props) => {
       fontWeight: 'bold',
       color: '#26c6da',
     },
+    previousStyling: {
+      fontWeight: 'bold',
+      color: 'lightgrey',
+    },
   }));
   const classes = useStyles();
-  const { updatedStyling } = classes;
-  const valueStyling = subscriptionName === 'Updated Subscription' ? updatedStyling : null;
+  const { updatedStyling, previousStyling } = classes;
+  const valueStyling = subscriptionName === 'Updated Subscription' ? updatedStyling : previousStyling;
   debugger;
   return (
     <div styleName="container">

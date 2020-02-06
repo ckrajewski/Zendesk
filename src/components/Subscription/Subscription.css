@@ -14,8 +14,15 @@
   display: relative;
 }
 
+.center{
+	align-self: center;
+}
 .header {
   padding-bottom: 1.5rem;
+}
+
+.label {
+  padding-bottom: 0.5rem;
 }
 
 .layout {

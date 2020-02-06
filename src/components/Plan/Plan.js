@@ -2,8 +2,7 @@ import React from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-
-// const cx = classNames.bind(styles);
+import './Plan.css';
 
 export default class Plan extends React.Component {
   constructor(props) {
@@ -28,9 +27,11 @@ export default class Plan extends React.Component {
     debugger;
     return (
       <div>
-        <InputLabel>
-          Plan
-        </InputLabel>
+        <div styleName="label">
+          <InputLabel>
+            Plan
+          </InputLabel>
+        </div>
         <Select labelId="label" id="select" value={selectedPlan || plan} onChange={this.handlePlanSelect}>
           {planNames ? planNames.map(plan => (
             <MenuItem value={plan.value}>{plan.label}</MenuItem>)) : null }
