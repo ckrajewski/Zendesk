@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  createMuiTheme, ThemeProvider, withStyles, makeStyles,
-} from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Link from 'redux-first-router-link';
 import { cyan } from '@material-ui/core/colors/';

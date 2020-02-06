@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeStyles, useStyles } from '@material-ui/core/styles';
 import CurrencyFormat from 'react-currency-format';
 import InputLabel from '@material-ui/core/InputLabel';
 import Typography from '@material-ui/core/Typography';
@@ -8,6 +9,15 @@ const SubscriptionInfo = (props) => {
   const {
     plan, name, seats, price, subscriptionName,
   } = props;
+  const useStyles = makeStyles(theme => ({
+    updatedStyling: {
+      fontWeight: 'bold',
+      color: '#26c6da',
+    },
+  }));
+  const classes = useStyles();
+  const { updatedStyling } = classes;
+  const valueStyling = subscriptionName === 'Updated Subscription' ? updatedStyling : null;
   debugger;
   return (
     <div styleName="container">
@@ -23,7 +33,9 @@ const SubscriptionInfo = (props) => {
           </InputLabel>
         </div>
         <div>
-          {name}
+          <Typography variant="body1" className={valueStyling}>
+            {name}
+          </Typography>
         </div>
       </div>
       <div styleName="row">
@@ -33,7 +45,9 @@ const SubscriptionInfo = (props) => {
           </InputLabel>
         </div>
         <div>
-          {seats}
+          <Typography variant="body1" className={valueStyling}>
+            {seats}
+          </Typography>
         </div>
       </div>
       <div styleName="row">
@@ -43,7 +57,7 @@ const SubscriptionInfo = (props) => {
           </InputLabel>
         </div>
         <div>
-          <Typography variant="body1">
+          <Typography variant="body1" className={valueStyling}>
             <CurrencyFormat prefix="$" value={price} displayType="text" thousandSeparator />
           </Typography>
         </div>

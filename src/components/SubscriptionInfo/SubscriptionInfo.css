@@ -14,10 +14,10 @@
   padding-bottom: 2%;
 }
 
-.row div:first-of-type {
-  padding-right: 25%;
-}
-
 .row div {
   align-self: center;
+}
+
+.row div:first-of-type {
+  padding-right: 25%;
 }

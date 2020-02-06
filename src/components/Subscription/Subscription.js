@@ -86,6 +86,7 @@ class Subscription extends React.Component {
                   type="number"
                   value={seats}
                   onChange={this.handleSeatChange}
+                  inputProps={{ min: 1 }}
                 />
               </div>
               <div>
