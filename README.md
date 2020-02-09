@@ -1,13 +1,5 @@
 # Zendesk Front End Coding Challenge By Chris Krajewski
 
-## Sample Screenshots of Project
-
-![Initial Subscription Screen](./screenshots/initialSubscriptionScreen.png)
-
-![Modified Subscription Screen](./screenshots/modifiedSubscriptionScreen.png)
-
-![Submitted Subscription Screen](./screenshots/submittedSubscriptionScreen.png)
-
 ## Contribution
 
 I've collected a list of [Improvements and New Features](#improvements) that need to be done.
@@ -64,3 +56,17 @@ In case you have any comments, questions, bugs, enhancements feel free to open a
 - [ ] Support multiple products (each with their own plan and seat count)
 - [ ] Display/update the payment information
 - [ ] Display/update the contact information
+
+## Sample Screenshots of Project
+
+### Initial Subscription Screen
+
+![Initial Subscription Screen](./screenshots/initialSubscriptionScreen.png)
+
+### Modified Subscription Screen
+
+![Modified Subscription Screen](./screenshots/modifiedSubscriptionScreen.png)
+
+### Submitted Subscription Screen
+
+![Submitted Subscription Screen](./screenshots/submittedSubscriptionScreen.png)
