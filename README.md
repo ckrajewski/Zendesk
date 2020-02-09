@@ -1,5 +1,13 @@
 # Zendesk Front End Coding Challenge By Chris Krajewski
 
+## Sample Screenshots of Project
+
+![Initial Subscription Screen](./screenshots/initialSubscriptionScreen.png)
+
+![Modified Subscription Screen](./screenshots/modifiedSubscriptionScreen.png)
+
+![Submitted Subscription Screen](./screenshots/submitedSubscriptionScreen.png)
+
 ## Contribution
 
 I've collected a list of [Improvements and New Features](#improvements) that need to be done.
