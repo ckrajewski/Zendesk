@@ -3,28 +3,27 @@ import { shallow, mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import Subscription from '../components/Subscription/Subscription';
+import SubmittedScreen from '../components/SubmittedScreen/SubmittedScreen';
 
 configure({ adapter: new Adapter() });
 
 const mockStore = configureMockStore([thunk]);
 const storeStateMock = {
   default: {
-    initialSubscriptionReducer: {
-      subscription: {},
+    updateSubscriptionReducer: {
+      oldSubscription: {},
     },
-    previewReducer: {
-      subscription: {},
+    updateSubscriptionReducer: {
+      newSubscription: {},
     },
   },
 };
 
-let store;
-describe('Subscription component', () => {
+describe('SubmittedScreen component', () => {
   test('renders', () => {
   	const store = mockStore(storeStateMock);
 
-    const wrapper = shallow(<Subscription store={store} />).shallow();
+    const wrapper = shallow(<SubmittedScreen store={store} />).shallow();
     expect(wrapper.exists()).toBe(true);
   });
 });

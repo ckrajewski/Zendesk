@@ -47,7 +47,6 @@ class Subscription extends React.Component {
 
   render() {
     const { savedSubscription, previewSubscription, planNames } = this.props;
-    debugger;
     const {
       plan, seats, price, initialized,
     } = this.state;

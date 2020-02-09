@@ -22,7 +22,6 @@ const SubscriptionInfo = (props) => {
   const classes = useStyles();
   const { updatedStyling, previousStyling } = classes;
   const valueStyling = subscriptionName === 'Updated Subscription' ? updatedStyling : previousStyling;
-  debugger;
   return (
     <div styleName="container">
       <div styleName="header">

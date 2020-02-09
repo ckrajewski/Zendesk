@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SubscriptionInfo from '../components/SubscriptionInfo/SubscriptionInfo';
+import Plan from '../components/Plan/Plan';
 
 configure({ adapter: new Adapter() });
 
-describe('SubscriptionInfo component', () => {
+describe('Plan component', () => {
   test('renders', () => {
-    const wrapper = shallow(<SubscriptionInfo />);
+    const wrapper = shallow(<Plan />);
     expect(wrapper.exists()).toBe(true);
   });
 });
