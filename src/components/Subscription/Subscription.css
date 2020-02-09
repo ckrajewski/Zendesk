@@ -14,9 +14,10 @@
   display: relative;
 }
 
-.center{
-	align-self: center;
+.center {
+  align-self: center;
 }
+
 .header {
   padding-bottom: 1.5rem;
 }

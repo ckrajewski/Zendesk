@@ -4,7 +4,6 @@ export function fetchDefaultSubscriptionData() {
   return function (dispatch) {
     axios.get('/api/current')
       .then((response) => {
-        debugger;
         dispatch({ type: 'RECEIVED_DEFAULT_SUBSCRIPTION', payload: response.data });
       })
       .catch((err) => {
@@ -18,7 +17,6 @@ export function previewSubscriptionData(previewData) {
   return function (dispatch) {
     axios.post('/api/preview', { previewData })
       .then((response) => {
-        debugger;
         dispatch({ type: 'RECEIVED_PREVIEW_SUBSCRIPTION', payload: response.data });
       })
       .catch((err) => {
@@ -29,10 +27,8 @@ export function previewSubscriptionData(previewData) {
 
 export function updateSubscriptionData(newSubscriptionData) {
   return function (dispatch) {
-    debugger;
     axios.put('/api/current', { newSubscriptionData })
       .then((response) => {
-        debugger;
         dispatch({ type: 'RECEIVED_UPDATED_SUBSCRIPTION', payload: response.data });
       })
       .catch((err) => {

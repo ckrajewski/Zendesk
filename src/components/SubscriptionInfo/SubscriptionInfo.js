@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, useStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import CurrencyFormat from 'react-currency-format';
 import InputLabel from '@material-ui/core/InputLabel';
 import Typography from '@material-ui/core/Typography';

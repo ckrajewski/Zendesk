@@ -8,13 +8,13 @@ import Subscription from '../components/Subscription/Subscription';
 
 configure({ adapter: new Adapter() });
 
-describe("Subscription component", () => {
-	test("renders", () => {
-		//Subscription.contextTypes = {
-  			//name: PropTypes.string,
-		//};
-		//const context = { name: 'foo' };
-		const wrapper = shallow(<Subscription/>, store={store});
-		expect(wrapper.exists()).toBe(true);
-	})
-})
+describe('Subscription component', () => {
+  test('renders', () => {
+    // Subscription.contextTypes = {
+  			// name: PropTypes.string,
+    // };
+    // const context = { name: 'foo' };
+    const wrapper = shallow(<Subscription />, store = { store });
+    expect(wrapper.exists()).toBe(true);
+  });
+});

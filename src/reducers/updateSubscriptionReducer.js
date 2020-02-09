@@ -6,7 +6,6 @@ export default function reducer(state = {
   switch (action.type) {
     case 'RECEIVED_UPDATED_SUBSCRIPTION':
     {
-      debugger;
       return {
         ...state,
         fetched: true,

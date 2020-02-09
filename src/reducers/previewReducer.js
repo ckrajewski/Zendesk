@@ -5,7 +5,6 @@ export default function reducer(state = {
   switch (action.type) {
     case 'RECEIVED_PREVIEW_SUBSCRIPTION':
     {
-      debugger;
       return { ...state, fetched: true, subscription: action.payload };
     }
     case 'RECEIVED_PREVIEW_SUBSCRIPTION_ERROR':

@@ -48,12 +48,10 @@ if (openBrowser('http://localhost:8080')) {
 }
 
 app.get('/api/current', (req, res) => {
-    debugger;
     res.send({currentSubscription, planNames: planNamesArray});
 });
 
 app.put('/api/current', (req, res) => {
-	debugger;
 	const oldSubscription = {...currentSubscription};
 	currentSubscription = {...req.body.newSubscriptionData};
     res.send({oldSubscription, newSubscription: currentSubscription});
@@ -70,7 +68,6 @@ const getPreviewData = (preview) => {
     return responseText;
 }
 app.post('/api/preview', (req, res) => {
-	debugger;
 	const previewData = req.body.previewData;
 	res.send(getPreviewData(previewData));
 });

@@ -11,7 +11,6 @@ import UpdateSubscription from '../UpdateSubscription/UpdateSubscription';
 import { fetchDefaultSubscriptionData, previewSubscriptionData } from '../../actions/action';
 import { areSubscriptionsEqual, isEmptyObject } from '../../Utils';
 import './Subscription.css';
-// const cx = classNames.bind(styles);
 
 class Subscription extends React.Component {
   constructor() {

@@ -7,14 +7,12 @@ import './Plan.css';
 export default class Plan extends React.Component {
   constructor(props) {
     super();
-    debugger;
     this.state = {
       selectedPlan: null,
     };
   }
 
   handlePlanSelect = (event) => {
-    debugger;
     const { handleSelect } = this.props;
     const selectedPlan = event.target.value;
     this.setState({ selectedPlan });
@@ -24,7 +22,6 @@ export default class Plan extends React.Component {
   render() {
     const { selectedPlan } = this.state;
     const { planNames, plan } = this.props;
-    debugger;
     return (
       <div>
         <div styleName="label">

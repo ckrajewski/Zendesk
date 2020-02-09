@@ -11,7 +11,6 @@ export default {
     */
     path: '/submittedscreen',
     thunk: async (dispatch, getState) => {
-      debugger;
       const { location } = getState();
       const { previewSubscription } = location.payload;
 
