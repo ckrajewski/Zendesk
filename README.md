@@ -48,7 +48,7 @@ To take a close look at the front end code (React) feel free to use any text edi
 In case you have any comments, questions, bugs, enhancements feel free to open an issue in this repository.
 
 ## Improvements
-- [ ] Improve client-side testing (Jest). Basic tests exist to test rendering, but more asserts should be done
+- [ ] Improve client-side testing (Jest). Tests exist to test rendering, but more asserts should be done
 - [ ] Add better error handling
 
 ## New Features To Add
