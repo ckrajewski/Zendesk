@@ -31,8 +31,6 @@ In case you have any comments, questions, bugs, enhancements feel free to open a
 # Improvements
 - [ ] Improve client-side testing (Jest)
 - [ ] Add better error handling
-- [ ] Fix weird styling issue on submitted screen (CSS doesn't always take effect for all prop
-      values. Happens randomly lol)
 
 # New Features 
 - [ ] Display an error message if an error is received from the server endpoints
