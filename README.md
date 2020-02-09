@@ -10,7 +10,7 @@ If you'd like to help by contributing to the project, you're more than welcome t
 First clone the repository:
 
 ```
-https://github.com/ckrajewski/Zendesk
+git clone https://github.com/ckrajewski/Zendesk
 ```
 
 Open a terminal and cd into the `Zendesk` folder. Then:
