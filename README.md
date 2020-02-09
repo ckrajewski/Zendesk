@@ -47,11 +47,11 @@ To take a close look at the front end code (React) feel free to use any text edi
 ## Feedback
 In case you have any comments, questions, bugs, enhancements feel free to open an issue in this repository.
 
-# Improvements
+## Improvements
 - [ ] Improve client-side testing (Jest). Basic tests exist to test rendering, but more asserts should be done
 - [ ] Add better error handling
 
-# New Features 
+## New Features To Add
 - [ ] Display an error message if an error is received from the server endpoints
 - [ ] Support multiple products (each with their own plan and seat count)
 - [ ] Display/update the payment information
