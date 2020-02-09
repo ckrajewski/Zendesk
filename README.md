@@ -6,7 +6,7 @@
 
 ![Modified Subscription Screen](./screenshots/modifiedSubscriptionScreen.png)
 
-![Submitted Subscription Screen](./screenshots/submitedSubscriptionScreen.png)
+![Submitted Subscription Screen](./screenshots/submittedSubscriptionScreen.png)
 
 ## Contribution
 
