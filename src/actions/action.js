@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-export function fetchDefaultSubscriptionData() {
+/*
+  calls the server for current subscription data
+*/
+export function fetchCurrentSubscriptionData() {
   return function (dispatch) {
     axios.get('/api/current')
       .then((response) => {
@@ -11,8 +14,11 @@ export function fetchDefaultSubscriptionData() {
       });
   };
 }
-
-
+/*
+  calls the server to get subscription data for when user
+  change subscription info on the subscription screen. To preview
+  what the new subscription values would be
+*/
 export function previewSubscriptionData(previewData) {
   return function (dispatch) {
     axios.post('/api/preview', { previewData })
@@ -25,6 +31,10 @@ export function previewSubscriptionData(previewData) {
   };
 }
 
+/*
+  calls the server to subscription data. Fired when users hits
+  the update subscription button
+*/
 export function updateSubscriptionData(newSubscriptionData) {
   return function (dispatch) {
     axios.put('/api/current', { newSubscriptionData })

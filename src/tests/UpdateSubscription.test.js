@@ -4,8 +4,12 @@ import Adapter from 'enzyme-adapter-react-16';
 import UpdateSubscription from '../components/UpdateSubscription/UpdateSubscription';
 
 configure({ adapter: new Adapter() });
-const savedSubscription = {plan: 'good', name : 'Good', seats: 5, price:50 };
-const previewSubscription = {plan: 'good', name : 'Good', seats: 5, price:50 };
+const savedSubscription = {
+  plan: 'good', name: 'Good', seats: 5, price: 50,
+};
+const previewSubscription = {
+  plan: 'good', name: 'Good', seats: 5, price: 50,
+};
 
 describe('UpdateSubscription component', () => {
   test('renders', () => {

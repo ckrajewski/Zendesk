@@ -8,10 +8,14 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Plan from '../Plan/Plan';
 import UpdateSubscription from '../UpdateSubscription/UpdateSubscription';
-import { fetchDefaultSubscriptionData, previewSubscriptionData } from '../../actions/action';
+import { fetchCurrentSubscriptionData, previewSubscriptionData } from '../../actions/action';
 import { areSubscriptionsEqual, isEmptyObject } from '../../Utils';
 import './Subscription.css';
 
+/*
+  Default landing screen
+  Renders subscription screen
+*/
 class Subscription extends React.Component {
   constructor() {
     super();
@@ -24,8 +28,8 @@ class Subscription extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchDefaultSubscriptionData } = this.props;
-    fetchDefaultSubscriptionData();
+    const { fetchCurrentSubscriptionData } = this.props;
+    fetchCurrentSubscriptionData();
   }
 
   handlePlanSelect = (plan) => {
@@ -116,13 +120,13 @@ class Subscription extends React.Component {
 }
 
 const mapToStateProps = state => ({
-  savedSubscription: state.default.initialSubscriptionReducer.subscription,
-  planNames: state.default.initialSubscriptionReducer.planNames,
-  previewSubscription: state.default.previewReducer.subscription,
+  savedSubscription: state.default.currentSubscriptionReducer.subscription,
+  planNames: state.default.currentSubscriptionReducer.planNames,
+  previewSubscription: state.default.previewSubscriptionReducer.subscription,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDefaultSubscriptionData: () => dispatch(fetchDefaultSubscriptionData()),
+  fetchCurrentSubscriptionData: () => dispatch(fetchCurrentSubscriptionData()),
   previewSubscriptionData: previewData => dispatch(previewSubscriptionData(previewData)),
 
 });

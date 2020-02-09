@@ -5,6 +5,10 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Typography from '@material-ui/core/Typography';
 import './SubscriptionInfo.css';
 
+/*
+  Renders the info for a given subscription in read only mode
+  Used to render previous and updated subscriptions in the submitted screen
+*/
 const SubscriptionInfo = (props) => {
   const {
     plan, name, seats, price, subscriptionName,

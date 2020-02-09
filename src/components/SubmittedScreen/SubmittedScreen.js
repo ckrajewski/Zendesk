@@ -7,6 +7,10 @@ import SubscriptionInfo from '../SubscriptionInfo/SubscriptionInfo';
 import { buttonStyling } from '../../Utils';
 import './SubmittedScreen.css';
 
+/*
+  Renders submitted screen
+  Shows previous and updated subscriptions
+*/
 const SubmittedScreen = (props) => {
   const BackButton = withStyles({ root: buttonStyling })(Button);
   const { newSubscription, oldSubscription } = props;

@@ -6,6 +6,12 @@ import { cyan } from '@material-ui/core/colors/';
 import { areSubscriptionsEqual, buttonStyling } from '../../Utils';
 import './UpdateSubscription.css';
 
+/*
+  Renders Update Subscription button
+  Is disabled if current subscription is the same
+  as the one saved on the server
+*/
+
 const UpdateSubscription = (props) => {
   const SubmittedButton = withStyles({ root: buttonStyling })(Button);
   const { savedSubscription, previewSubscription } = props;

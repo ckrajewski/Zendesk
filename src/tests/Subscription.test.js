@@ -10,16 +10,15 @@ configure({ adapter: new Adapter() });
 const mockStore = configureMockStore([thunk]);
 const storeStateMock = {
   default: {
-    initialSubscriptionReducer: {
+    currentSubscriptionReducer: {
       subscription: {},
     },
-    previewReducer: {
+    previewSubscriptionReducer: {
       subscription: {},
     },
   },
 };
 
-let store;
 describe('Subscription component', () => {
   test('renders', () => {
   	const store = mockStore(storeStateMock);

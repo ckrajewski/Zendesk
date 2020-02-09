@@ -3,11 +3,7 @@ import { updateSubscriptionData } from './actions/action';
 export default {
   SUBMITTEDSCREEN: {
     /*
-    Redux first router path syntax
-    https://github.com/faceyspacey/redux-first-router/issues/83
-    the : symbol signifies variables
-    the ? after the : means an optional paramter variable
-    ()* shows am optional parameter label
+      Handles updating subscription data when user hits update subscription
     */
     path: '/submittedscreen',
     thunk: async (dispatch, getState) => {
@@ -18,5 +14,8 @@ export default {
       dispatch(updateSubscriptionData(previewSubscription));
     },
   },
+  /*
+      Navigates to subscription page
+    */
   SUBSCRIPTION: '/',
 };

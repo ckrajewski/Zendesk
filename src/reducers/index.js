@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import initialSubscriptionReducer from './initialSubscriptionReducer';
-import previewReducer from './previewReducer';
+import currentSubscriptionReducer from './currentSubscriptionReducer';
+import previewSubscriptionReducer from './previewSubscriptionReducer';
 import updateSubscriptionReducer from './updateSubscriptionReducer';
 
 export { default as page } from './page';
 
 export default combineReducers({
-  initialSubscriptionReducer, previewReducer, updateSubscriptionReducer,
+  currentSubscriptionReducer, previewSubscriptionReducer, updateSubscriptionReducer,
 });

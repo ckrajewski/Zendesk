@@ -38,7 +38,7 @@ To take a close look at the front end code (React) feel free to use any text edi
 
 - React and Redux.
 - Webpack to bundle JS, and webpack-dev-server to run client side code on port 8080
-- Node and Nodemon for backend (server) code. Server runs on port 3000
+- Node, Express, and Nodemon for backend (server) code. Server runs on port 3000
 - ESLint used for formatting
 - Material UI for styling
 - Redux First Router for handling routing in React (navigating between subscription and submitted screen)

@@ -1,3 +1,6 @@
+/*
+  used for Redux First Router
+*/
 import { NOT_FOUND } from 'redux-first-router';
 
 export const components = {
