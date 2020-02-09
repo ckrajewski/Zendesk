@@ -18,8 +18,10 @@ Open a terminal and cd into the `Zendesk` folder. Then:
 1. `npm install` (installs the node modules and the TypeScript definition files)
 2. `npm start` 
 
-Your default browser should automatically open and redirect you to `http://localhost:8080`
+Your default browser should automatically open and redirect you to `http://localhost:8080` where the website will be running!
+
 It may open the tab before everything is loaded, but that's OK. After waiting for a bit, it should load :)
+
 
 ## Running Tests
 
